@@ -94,3 +94,49 @@ button:hover{background:#373126;border-color:#b99a4d}
 .footer-brand{color:#d6b45c;font-weight:900;letter-spacing:.12em}
 .source-figure img{border-color:#514b3b;background:#17181a}
 @media(max-width:480px){.chapter-nav{grid-template-columns:1fr}.chapter-nav-next{text-align:left;align-items:flex-start}}
+
+
+/* Progress checklist · Water Master */
+.progress-panel{border:1px solid #5b4b2b;border-radius:13px;padding:16px 18px;margin:18px 0 22px;background:linear-gradient(135deg,#222326,#191a1d)}
+.progress-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#f0e4bd}
+.progress-track{height:8px;border-radius:99px;background:#393a3d;overflow:hidden;margin:12px 0}
+.progress-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#9b7b35,#e6c96f);transition:width .2s ease}
+.progress-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.check-row{display:flex;align-items:center;gap:8px;font-size:.88rem;color:#d5d0c3;cursor:pointer}
+.check-row input{accent-color:#d6b45c;width:17px;height:17px;flex:0 0 auto;cursor:pointer}
+.chapter-check{margin-bottom:12px}
+.chapter-complete{border-color:#7d6a37!important}
+.chapter-complete .chapter-check span{color:#d6b45c}
+.quest-check{margin-bottom:8px}
+.quest-complete{background:linear-gradient(90deg,rgba(214,180,92,.07),transparent 75%);border-radius:8px;padding-left:10px;padding-right:10px}
+.quest-complete .quest-check span{color:#d6b45c}
+#resetChapterProgress{font-size:.82rem;padding:5px 10px}
+@media(max-width:520px){.progress-actions{align-items:flex-start}.progress-top{align-items:flex-start;flex-direction:column}}
+
+/* Main / Side / Post-Game grouping */
+:root{--g-main:#e8c45a;--g-side:#4fc3b8;--g-post:#b79cff}
+.group-head{position:relative;margin:44px 0 6px;padding:20px 24px 18px;border-radius:14px;color:#14130f;scroll-margin-top:20px;box-shadow:0 10px 26px rgba(0,0,0,.28);overflow:hidden}
+.group-head:first-child{margin-top:0}
+.group-head::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,.22),rgba(255,255,255,0) 55%);pointer-events:none}
+.group-head.g-main{background:var(--g-main)}
+.group-head.g-side{background:var(--g-side)}
+.group-head.g-post{background:var(--g-post)}
+.group-head h2{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;color:#14130f}
+.group-head .group-en{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:900;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.group-head .group-th{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:800;opacity:.85}
+.group-head .group-th::before{content:"/";margin-right:16px;opacity:.5}
+.group-head .group-desc{margin:8px 0 0;font-size:.92rem;font-weight:600;color:#2b2a22}
+.quest[data-group]{border-left:5px solid var(--gc);padding-left:20px;margin-top:6px}
+.quest[data-group=main]{--gc:var(--g-main)}
+.quest[data-group=side]{--gc:var(--g-side)}
+.quest[data-group=post]{--gc:var(--g-post)}
+.side .nav-group{display:block;margin:16px 0 4px;padding:6px 10px;border-radius:8px;font-size:.82rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#14130f}
+.side .nav-group small{display:block;font-size:.78rem;font-weight:700;letter-spacing:0;text-transform:none;opacity:.8}
+.side .nav-group:first-child{margin-top:0}
+.side .nav-group.g-main{background:var(--g-main)}
+.side .nav-group.g-side{background:var(--g-side)}
+.side .nav-group.g-post{background:var(--g-post)}
+@media(max-width:600px){.group-head{padding:16px 16px 14px}.quest[data-group]{padding-left:14px}}
+
+.filter-empty{padding:18px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center}
+.toolbar{align-items:center}
