@@ -140,3 +140,33 @@ button:hover{background:#373126;border-color:#b99a4d}
 
 .filter-empty{padding:18px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center}
 .toolbar{align-items:center}
+
+/* quest type tags + TOC checkmarks */
+.quest-tags{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 10px}
+.qtag{display:inline-block;padding:3px 12px;border-radius:99px;font-size:.78rem;font-weight:800;letter-spacing:.03em;color:#14130f}
+.qtag.t-main{background:var(--g-main)}
+.qtag.t-side{background:var(--g-side)}
+.qtag.t-post{background:var(--g-post)}
+.side nav a{position:relative;padding-right:22px}
+.side nav a.done{color:var(--muted)}
+.side nav a.done::after{content:"\2713";position:absolute;right:0;top:6px;color:#5fd08a;font-weight:900}
+.toc-progress{display:block;margin-top:4px;font-size:.78rem;font-weight:700;color:var(--muted)}
+
+/* TOC scrolls on its own */
+.side{max-height:calc(100vh - 32px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(214,180,92,.55) transparent}
+.side::-webkit-scrollbar{width:8px}
+.side::-webkit-scrollbar-track{background:transparent}
+.side::-webkit-scrollbar-thumb{background:rgba(214,180,92,.45);border-radius:8px}
+.side::-webkit-scrollbar-thumb:hover{background:rgba(214,180,92,.75)}
+@media(max-width:800px){.side{max-height:none;overflow:visible}}
+
+.qtag.t-miss{background:#ff7a6b;color:#2a0d09}
+
+/* timeline layout: type shown by tag, dot and colored rule */
+.side nav a[class^=g-]::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;background:var(--dot);vertical-align:baseline}
+.side nav a.g-main,.toc-legend .g-main{--dot:var(--g-main)}
+.side nav a.g-side,.toc-legend .g-side{--dot:var(--g-side)}
+.side nav a.g-post,.toc-legend .g-post{--dot:var(--g-post)}
+.toc-legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin:2px 0 12px;font-size:.76rem;color:var(--muted)}
+.toc-legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;background:var(--dot)}
+.side .nav-group:not(.g-main):not(.g-side):not(.g-post){background:rgba(255,255,255,.09);color:#f5f1e7}
